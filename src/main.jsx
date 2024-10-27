@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { StrictMode } from "react";
-import { CardGrid } from "./components/cardGrid";
+import { CardGrid } from "./components/cardgrid";
 import "./styles/styles.css";
 
 let root = ReactDOM.createRoot(document.getElementById("root"));
