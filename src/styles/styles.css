@@ -1,0 +1,140 @@
+/* Global styles and game container */
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f2f5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+.game-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.memory-game {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Score display styles */
+.current-score,
+.high-score {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.current-score {
+  color: #2ecc71;
+  margin-bottom: 10px;
+}
+
+.high-score {
+  color: #e74c3c;
+  margin-bottom: 30px;
+}
+
+/* Card grid layout */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Individual card styles */
+.card-container {
+  width: 200px;
+  height: 250px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-container:active {
+  transform: scale(0.98);
+}
+
+/* Card image styles */
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #f0f2f5;
+}
+
+/* Card text styles */
+.card-text {
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 2rem;
+  }
+
+  .current-score,
+  .high-score {
+    font-size: 1.25rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .card-container {
+    width: 150px;
+    height: 200px;
+  }
+
+  .image {
+    height: 150px;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for new cards */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.card-container {
+  animation: cardAppear 0.3s ease-out;
+}
